@@ -89,12 +89,42 @@ const canPay =(arr, num)=>{
     return acc + val;
   },0);
 
-  let inputNumber = num;
   // ** validate num;
   if(typeof num !=='number' || isNaN(num) || num<=0){
     return ' second parameter must be a valid number'
   }
-  let check = result === inputNumber ? true : false;
+  let check = result === num ? true : false;
   return check;
 }
 console.log(canPay([10,20,30,40],100));
+
+function onlyPay(arr, num){
+  // ** array validation--->
+  if (!Array.isArray(arr)) {
+    return 'first parameter must be an Array'
+  };
+  // ** taking array length --->; 
+  var length = arr.length;
+  // ** array length validation--->
+  if(length === 0){
+    return ' Array can not be empty'
+  };
+  // ** adding all array data
+  var total = 0;
+  for (var i = 0; i <length; i++) {
+
+    total+=arr[i];
+    
+  }
+  // ** validating number --->
+
+  if(num < 0 || isNaN(num) ||typeof num!=='number')return ' please provide a valid number';
+
+  if(total === num){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(onlyPay([1,2,3], 6));
