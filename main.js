@@ -71,3 +71,30 @@ const add={
 }
 
 findAddress(add);
+
+
+
+
+
+const canPay =(arr, num)=>{
+  // ** if arr is an [];
+  if (!Array.isArray(arr)) {
+    return 'firt parameter must be an array'
+  }
+  let length = arr.length;
+  if (length === 0) {
+    return 'purchage amount can not be empty'
+  }
+  let result = arr.reduce((acc, val)=>{
+    return acc + val;
+  },0);
+
+  let inputNumber = num;
+  // ** validate num;
+  if(typeof num !=='number' || isNaN(num) || num<=0){
+    return ' second parameter must be a valid number'
+  }
+  let check = result === inputNumber ? true : false;
+  return check;
+}
+console.log(canPay([10,20,30,40],100));
