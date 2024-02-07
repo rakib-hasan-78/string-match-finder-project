@@ -54,3 +54,20 @@ function sortMaker(arr){
       return arr;
 }
 console.log(sortMaker([1,9]));
+
+const findAddress =(obj)=>{
+  const street = obj.street || '__';
+  const house = obj.house || '__';
+  const society = obj.society || '__';
+
+  const result = `${street}, ${house} , ${society}`;
+  console.log(result);
+}
+
+const add={
+  street:10,
+  house:`15/A`,
+  society:'bangladesh'
+}
+
+findAddress(add);
